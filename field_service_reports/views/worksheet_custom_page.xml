@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="industry_fsm_sale_report.worksheet_custom_page" model="ir.ui.view">
+        <field name="active">False</field>
+    </record>
+
+</odoo>

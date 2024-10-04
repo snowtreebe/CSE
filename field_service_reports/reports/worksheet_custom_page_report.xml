@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="worksheet_custom_page_inherit" inherit_id="industry_fsm_report.worksheet_custom_page">
+        <!-- Wegnemen tabel urenstaten -->
+        <xpath expr="/t[1]/div[1]/div[3]/t[2]/div[1]/table[1]" position="replace"/>
+        <!-- Wegnemen titel urenstaten -->
+        <xpath expr="/t[1]/div[1]/div[3]/t[2]/h2[1]" position="replace"/>
+
+        <xpath expr="/t[1]/div[1]/div[3]/t[2]/div[1]/div[1]/div[1]/table[1]" position="replace"/>
+        <!-- Wegnemen titel tijd & materiaal -->
+        <!-- Veld toevoegen werknemer -->
+        <xpath expr="/t/div/div[2]" position="after">
+            <div class="row">
+            <div class="col">
+                <span t-field="doc.x_studio_planning_werknemer.name"/>
+            </div>
+            </div>
+        </xpath>
+        <!-- Veld werknemer bold zetten-->
+        <xpath expr="/t/div/div[3]/div/span" position="attributes">
+            <attribute name="class" separator=" " add="o_bold"/>
+        </xpath>
+        <!-- Veld werknemer stijl kop3 zetten zetten-->
+        <xpath expr="/t/div/div[3]/div/span" position="attributes">
+            <attribute name="class" separator=" " add="h3"/>
+        </xpath>
+        <!-- Veld toewijsdatum toevoegen-->
+        <xpath expr="/t/div/div[2]" position="after">
+            <div class="row">
+            <div class="col-3"/>
+            <div class="col-3"/>
+            <div class="col-3">
+                <span>
+                <strong>Toewijsdatum:</strong>
+                <br/>
+                </span>
+                <span t-field="doc.date_assign"/>
+            </div>
+            <div class="col-3"/>
+            </div>
+        </xpath>
+        <!-- Widget op date zetten-->
+        <xpath expr="/t[1]/div[1]/div[3]/div[3]/span[2]" position="attributes">
+            <attribute name="t-options-widget">"date"</attribute>
+        </xpath>
+        <!-- Nieuw titel blok toevoegen-->
+        <xpath expr="/t/div/div[4]" position="after">
+            <div class="row">
+            <div class="col h2">
+                <span>New Title</span>
+            </div>
+            </div>
+        </xpath>
+        <!-- Titel tekst aanpassen en onderlijnen-->
+        <xpath expr="/t/div/div[5]/div/span" position="replace">
+            <span>
+            <u>Dagoverzicht                                                                    </u>
+            </span>
+        </xpath>
+        <!-- Veld met label omschrijving onderaan de code-->
+        <!-- nieuw tekstblok -->
+        <xpath expr="/t/div/div[6]" position="after">
+            <div class="row">
+            <div class="col">
+                <span>New Text Block</span>
+            </div>
+            </div>
+        </xpath>
+        <!-- nieuw tekstblok naam en plek en opmaak 'wat gedaan'-->
+        <xpath expr="/t/div/div[7]/div/span" position="replace">
+            <span>
+            <u><br/>Wat gedaan:<br/><br/><br/><br/><br/></u>
+            </span>
+        </xpath>
+        <!-- nieuw tekstblok -->
+        <xpath expr="/t/div/div[7]" position="after">
+            <div class="row">
+            <div class="col">
+                <span>New Text Block</span>
+            </div>
+            </div>
+        </xpath>
+        <!-- nieuw tekstblok naam en plek en opmaak 'gberuikt materiaal'-->
+        <xpath expr="/t/div/div[8]/div/span" position="replace">
+            <span>
+            <u>Gebruikt materiaal:<br/><br/><br/><br/><br/></u>
+            </span>
+        </xpath>
+        <!-- nieuw tekstblok -->
+        <xpath expr="/t/div/div[8]" position="after">
+            <div class="row">
+            <div class="col">
+                <span>New Text Block</span>
+            </div>
+            </div>
+        </xpath>
+        <!-- nieuw tekstblok naam en plek en opmaak 'nog to do'-->
+        <xpath expr="/t/div/div[9]/div/span" position="replace">
+            <span>
+            <u>Nog to-do:<br/><br/><br/><br/><br/><br/><br/></u>
+            </span>
+        </xpath>
+        <!-- nieuw tekstblok -->
+        <xpath expr="/t/div/div[9]" position="after">
+            <div class="row">
+            <div class="col">
+                <span>New Text Block</span>
+            </div>
+            </div>
+        </xpath>
+        <!-- nieuw tekstblok naam en plek en opmaak 'uren'-->
+        <xpath expr="/t/div/div[10]/div/span" position="replace">
+            <span>
+            <span style="font-size: 18px;">Uren:                                   </span>
+            <u>
+                <span style="font-size: 18px;">Van:                                             Tot:                                                  </span>
+            </u>
+            </span>
+        </xpath>
+        <!-- nieuw tekstblok -->
+        <xpath expr="/t/div/div[10]" position="after">
+            <div class="row">
+            <div class="col">
+                <span>New Text Block</span>
+            </div>
+            </div>
+        </xpath>
+        <!-- nieuw tekstblok naam en plek en opmaak 'uren'-->
+        <xpath expr="/t/div/div[11]/div/span" position="replace">
+            <span>
+            <br/>
+            <br/>
+            <strong>
+                <span style="font-size: 24px;">Afgewerkt:</span>
+            </strong>
+            </span>
+        </xpath>
+        <xpath expr="/t/div/div[11]/div/span" position="replace">
+            <span>
+            <br/>
+            <br/>
+            <strong>
+                <span style="font-size: 24px;">Afgewerkt:</span>
+            </strong>
+            </span>
+        </xpath>
+        <!-- Toevoegen Ja / Nee-->
+        <xpath expr="/t/div/div[11]/div/span/strong/span" position="replace">
+            <span style="font-size: 24px;">Afgewerkt:                          Ja             /            Nee</span>
+        </xpath>
+        <!-- Veld met label omschrijving-->
+        <xpath expr="/t/div/div[5]/div/span/u" position="replace">
+            <u>Dagoverzicht                                                        </u>
+        </xpath>
+        <xpath expr="/t/div/div[8]/div/span/u" position="replace">
+            <u><br/>Wat gedaan:<br/><br/><br/><br/><br/></u>
+        </xpath>
+        <xpath expr="/t/div/div[9]/div/span/u" position="replace">
+            <u>Gebruikt materiaal:<br/><br/><br/><br/><br/></u>
+        </xpath>
+        <xpath expr="/t/div/div[10]/div/span/u" position="replace">
+            <u>Nog to-do:</u>
+        </xpath>
+        <xpath expr="/t/div/div[10]/div/span/u" position="replace">
+            <u>Nog to-do:</u>
+        </xpath>
+        <!-- Nieuw veld voor omschrijving toegevoegd-->
+        <xpath expr="/t/div/div[7]/div/span" position="before">
+            <span t-field="doc.description"/>
+        </xpath>
+        <xpath expr="/t/div/div[5]" position="after">
+            <div class="row">
+            <div class="col">
+                <span>Omschrijving</span>
+            </div>
+            </div>
+        </xpath>
+        <!-- opmaak veld omschrijving -->
+        <xpath expr="/t/div/div[6]/div" position="attributes">
+            <attribute name="class" separator=" " add="h6" remove="h5"/>
+        </xpath>
+        <xpath expr="/t/div/div[6]/div" position="attributes">
+            <attribute name="class" separator=" " add="o_bold"/>
+        </xpath>
+        <xpath expr="/t/div/div[6]/div" position="attributes">
+            <attribute name="class" separator=" " add="o_italic"/>
+        </xpath>
+        <xpath expr="/t/div/div[6]/div" position="attributes">
+            <attribute name="class" separator=" " add="o_underline"/>
+        </xpath>
+        <!-- Onderlinge afstanden aangepast-->
+        <xpath expr="/t/div/div[6]/div/span" position="replace">
+            <span>Omschrijving:</span>
+        </xpath>
+        <xpath expr="/t/div/div[8]/div/span[2]/u" position="replace">
+            <u><br/>Wat gedaan:<br/><br/><br/><br/><br/></u>
+        </xpath>
+        <xpath expr="/t/div/div[10]/div/span/u" position="replace">
+            <u>Gebruikt materiaal:</u>
+        </xpath>
+        <xpath expr="/t/div/div[8]/div/span[2]/u" position="replace">
+            <u>Wat gedaan:<br/><br/><br/><br/></u>
+        </xpath>
+        <!-- Naam werknemer verwijdert-->
+        <xpath expr="/t[1]/div[1]/div[4]/div[1]/span[1]" position="replace"/>
+        <xpath expr="/t/div/div[2]" position="after">
+            <table class="line">
+            <thead>
+                <tr>
+                <th>
+                    <span>Werknemer</span>
+                </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr t-foreach="doc.x_studio_many2many_field_ADISp" t-as="table_line">
+                <td>
+                    <span t-field="table_line.display_name"/>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+        </xpath>
+        <xpath expr="/t/div/table" position="attributes">
+            <attribute name="style" separator=";" add="width:3px"/>
+        </xpath>
+        <xpath expr="/t/div/table" position="attributes">
+            <attribute name="style" separator=";" add="width:100px"/>
+        </xpath>
+        <xpath expr="/t/div/table/thead/tr/th" position="after">
+            <th>
+            <span>Wie?</span>
+            </th>
+        </xpath>
+        <xpath expr="/t/div/table/tbody/tr/td" position="after">
+            <td>
+            <span t-field="table_line.x_studio_wie_1"/>
+            </td>
+        </xpath>
+        <xpath expr="/t/div/table/tbody/tr/td[2]" position="attributes">
+            <attribute name="style" separator=";" add="width:80px"/>
+        </xpath>
+        <xpath expr="/t/div/table/thead/tr/th[2]" position="attributes">
+            <attribute name="style" separator=";" add="width:80px"/>
+        </xpath>
+        <xpath expr="/t/div/table/thead/tr/th[1]" position="attributes">
+            <attribute name="style" separator=";" add="width:100px"/>
+        </xpath>
+        <xpath expr="/t/div/table/tbody/tr/td[1]" position="attributes">
+            <attribute name="style" separator=";" add="width:100px"/>
+        </xpath>
+        <xpath expr="/t/div/table" position="attributes">
+            <attribute name="style" separator=";" add="width:100px" remove="width:3px"/>
+        </xpath>
+        <xpath expr="/t/div/table" position="attributes">
+            <attribute name="style" separator=";" add="width:200px" remove="width:3px"/>
+        </xpath>
+        <xpath expr="/t/div/div[9]/div/span" position="replace">
+            <span>
+            <u><br/>Wat nog te doen:<br/><br/><br/><br/><br/></u>
+            </span>
+        </xpath>
+    </template>
+    
+</odoo>
+     
+     
+       
